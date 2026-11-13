@@ -28,11 +28,11 @@
 window.CPW_EVENTS = [
 
   {
-    date:      "2026-09-21",
+    date:      "2026-11-16",
     upcoming:  true,
     highlight: true,
-    date_fr:   "21 septembre 2026",
-    date_en:   "21 September 2026",
+    date_fr:   "16 novembre 2026",
+    date_en:   "16 novembre 2026",
     title_fr:  "Réunion mensuelle",
     title_en:  "Weekly Meeting",
     place_fr:  "Centre Prince Henri, Walferdange - Salle 1",
