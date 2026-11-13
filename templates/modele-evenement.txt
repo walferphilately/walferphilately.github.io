@@ -1,0 +1,17 @@
+COPIEZ LE BLOC CI-DESSOUS (de l'accolade { à l'accolade } et la virgule)
+puis collez-le en haut de la liste dans  content/events.js
+
+  {
+    date:      "2026-01-01",
+    upcoming:  true,
+    highlight: false,
+    date_fr:   "Date affichée en français",
+    date_en:   "Date shown in English",
+    title_fr:  "Titre de l'événement",
+    title_en:  "Event title",
+    place_fr:  "Lieu — heure",
+    place_en:  "Place — time",
+    image:     "",
+    body_fr:   "Description en français.",
+    body_en:   "Description in English."
+  },

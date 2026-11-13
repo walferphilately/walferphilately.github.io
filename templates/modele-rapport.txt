@@ -1,0 +1,11 @@
+1) Placez votre PDF dans le dossier  reports/
+2) COPIEZ le bloc ci-dessous et collez-le en haut de la liste dans  content/reports.js
+
+  {
+    year:     2026,
+    title_fr: "Rapport d'activité 2026",
+    title_en: "2026 activity report",
+    desc_fr:  "Courte description (ou laissez vide : \"\").",
+    desc_en:  "Short description (or leave empty: \"\").",
+    file:     "reports/Nom_De_Votre_Fichier.pdf"
+  },

@@ -1,0 +1,247 @@
+/* =====================================================================
+   Cercle Philatélique Walferdange — Feuille de style principale
+   (Vous n'avez normalement PAS besoin de modifier ce fichier.)
+   ===================================================================== */
+
+:root {
+  --bleu:        #14314f;   /* bleu profond, couleur principale */
+  --bleu-clair:  #1d4b78;
+  --or:          #b8860b;   /* or / laiton, couleur d'accent */
+  --or-clair:    #d4a72c;
+  --bordeaux:    #7a2230;
+  --papier:      #f7f4ec;   /* fond couleur papier ancien */
+  --papier-2:    #efe9db;
+  --encre:       #22262b;   /* texte */
+  --gris:        #5c6570;
+  --blanc:       #ffffff;
+  --ombre:       0 6px 24px rgba(20, 49, 79, .10);
+  --ombre-forte: 0 12px 40px rgba(20, 49, 79, .18);
+  --rayon:       10px;
+  --largeur:     1140px;
+  --serif:       "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
+  --sans:        "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* ---------- Base ---------- */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: var(--sans);
+  color: var(--encre);
+  background: var(--papier);
+  line-height: 1.65;
+  font-size: 17px;
+}
+img { max-width: 100%; display: block; }
+a { color: var(--bleu-clair); }
+h1, h2, h3, h4 { font-family: var(--serif); color: var(--bleu); line-height: 1.2; font-weight: 600; }
+h1 { font-size: clamp(2rem, 4vw, 3rem); margin: 0 0 .4em; }
+h2 { font-size: clamp(1.5rem, 3vw, 2.1rem); margin: 0 0 .6em; }
+h3 { font-size: 1.25rem; margin: 0 0 .4em; }
+.container { width: 100%; max-width: var(--largeur); margin: 0 auto; padding: 0 22px; }
+.section { padding: 64px 0; }
+.section--alt { background: var(--papier-2); }
+.section--dark { background: var(--bleu); color: #e9eef4; }
+.section--dark h2, .section--dark h3 { color: var(--blanc); }
+.lead { font-size: 1.18rem; color: var(--gris); }
+.center { text-align: center; }
+.eyebrow {
+  text-transform: uppercase; letter-spacing: .18em; font-size: .78rem;
+  font-weight: 700; color: var(--or); margin: 0 0 .5em;
+}
+
+/* stamp perforation divider */
+.perf {
+  height: 14px;
+  background:
+    radial-gradient(circle at 8px 0, transparent 6px, var(--or) 6.5px) 0 0 / 16px 14px repeat-x;
+  opacity: .5;
+}
+
+/* ---------- Boutons ---------- */
+.btn {
+  display: inline-block; cursor: pointer;
+  padding: 12px 24px; border-radius: 999px;
+  font-weight: 600; font-size: .98rem; text-decoration: none;
+  border: 2px solid var(--bleu); background: var(--bleu); color: #fff;
+  transition: transform .15s ease, box-shadow .15s ease, background .15s;
+}
+.btn:hover { transform: translateY(-2px); box-shadow: var(--ombre); background: var(--bleu-clair); }
+.btn--ghost { background: transparent; color: var(--bleu); }
+.btn--ghost:hover { background: var(--bleu); color: #fff; }
+.btn--or { background: var(--or); border-color: var(--or); }
+.btn--or:hover { background: var(--or-clair); border-color: var(--or-clair); }
+
+/* ---------- En-tête / navigation ---------- */
+.site-header {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(247,244,236,.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(20,49,79,.12);
+}
+.nav {
+  display: flex; align-items: center; gap: 18px;
+  padding: 10px 0; max-width: var(--largeur); margin: 0 auto; padding-left: 22px; padding-right: 22px;
+}
+.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; margin-right: auto; }
+.brand img { height: 46px; width: auto; }
+.brand b { font-family: var(--serif); color: var(--bleu); font-size: 1.05rem; line-height: 1.1; }
+.brand span { display: block; font-size: .72rem; color: var(--or); letter-spacing: .12em; text-transform: uppercase; }
+.nav-links { display: flex; gap: 4px; align-items: center; list-style: none; margin: 0; padding: 0; }
+.nav-links a {
+  text-decoration: none; color: var(--encre); font-weight: 600; font-size: .9rem;
+  padding: 8px 10px; border-radius: 8px; white-space: nowrap;
+}
+.nav-links a:hover { background: rgba(20,49,79,.08); }
+.nav-links a.active { color: var(--bleu); background: rgba(184,134,11,.14); }
+
+.lang {
+  display: inline-flex; border: 1.5px solid var(--bleu); border-radius: 999px; overflow: hidden;
+}
+.lang button {
+  border: 0; background: transparent; cursor: pointer; padding: 6px 12px;
+  font-weight: 700; font-size: .82rem; color: var(--bleu);
+}
+.lang button.active { background: var(--bleu); color: #fff; }
+
+.burger { display: none; border: 0; background: transparent; cursor: pointer; padding: 8px; }
+.burger span { display: block; width: 26px; height: 3px; background: var(--bleu); margin: 5px 0; border-radius: 3px; transition: .2s; }
+
+/* ---------- Héros ---------- */
+.hero {
+  position: relative; color: #fff; text-align: center;
+  padding: 92px 0 84px;
+  background:
+    linear-gradient(rgba(15,34,55,.86), rgba(15,34,55,.92)),
+    url("../img/walferdange-batiment.jpg") center 40% / cover no-repeat, var(--bleu);
+  border-bottom: 4px solid var(--or);
+}
+.hero h1 { color: #fff; }
+.hero .lead { color: #dfe7f0; max-width: 720px; margin: 0 auto 1.4em; }
+.hero-logo {
+  background: #fff; display: inline-block; padding: 14px 18px; border-radius: 12px;
+  box-shadow: var(--ombre-forte); margin-bottom: 26px;
+}
+.hero-logo img { height: 120px; width: auto; }
+.hero-cta { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+/* ---------- Grilles / cartes ---------- */
+.grid { display: grid; gap: 26px; }
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-2 { grid-template-columns: repeat(2, 1fr); }
+
+.card {
+  background: #fff; border-radius: var(--rayon); overflow: hidden;
+  box-shadow: var(--ombre); border: 1px solid rgba(20,49,79,.08);
+  display: flex; flex-direction: column; transition: transform .18s ease, box-shadow .18s ease;
+}
+.card:hover { transform: translateY(-4px); box-shadow: var(--ombre-forte); }
+.card-media { aspect-ratio: 16/10; background: var(--papier-2); overflow: hidden; }
+.card-media img { width: 100%; height: 100%; object-fit: cover; }
+.card-body { padding: 20px 22px 24px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+.card .date { color: var(--or); font-weight: 700; font-size: .85rem; text-transform: uppercase; letter-spacing: .06em; }
+.card .place { color: var(--gris); font-size: .9rem; }
+.card p { margin: 4px 0 0; }
+.card .card-foot { margin-top: auto; padding-top: 12px; }
+
+.tag {
+  display: inline-block; font-size: .72rem; font-weight: 700; letter-spacing: .05em;
+  text-transform: uppercase; padding: 3px 10px; border-radius: 999px;
+  background: rgba(184,134,11,.15); color: var(--or); align-self: flex-start;
+}
+.tag--past { background: rgba(92,101,112,.15); color: var(--gris); }
+
+/* ---------- Bandeau info / infos pratiques ---------- */
+.infobar { background: var(--bleu); color: #eaf0f6; }
+.infobar .grid-3 { padding: 34px 0; }
+.infobar h3 { color: #fff; margin-bottom: 2px; }
+.infobar .ib { display: flex; gap: 14px; align-items: flex-start; }
+.infobar .ib .ico { font-size: 1.6rem; line-height: 1; }
+.infobar a { color: var(--or-clair); }
+
+/* ---------- Deux colonnes texte + image ---------- */
+.split { display: grid; grid-template-columns: 1.1fr 1fr; gap: 46px; align-items: center; }
+.split img { border-radius: var(--rayon); box-shadow: var(--ombre); }
+.framed {
+  border: 1px solid rgba(20,49,79,.15); background: #fff; padding: 10px;
+  border-radius: var(--rayon); box-shadow: var(--ombre);
+}
+
+/* ---------- Liste rapports / documents ---------- */
+.report-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+.report {
+  display: flex; align-items: center; gap: 18px;
+  background: #fff; border: 1px solid rgba(20,49,79,.10); border-radius: var(--rayon);
+  padding: 16px 20px; box-shadow: var(--ombre); transition: transform .15s ease;
+}
+.report:hover { transform: translateX(4px); }
+.report .yr {
+  font-family: var(--serif); font-size: 1.5rem; font-weight: 700; color: var(--or);
+  min-width: 72px; text-align: center;
+}
+.report .meta { flex: 1; }
+.report .meta b { display: block; color: var(--bleu); font-size: 1.05rem; }
+.report .meta small { color: var(--gris); }
+.report .dl { white-space: nowrap; }
+
+/* ---------- Chronologie (histoire) ---------- */
+.timeline { position: relative; margin: 30px 0; padding-left: 34px; }
+.timeline::before { content: ""; position: absolute; left: 9px; top: 6px; bottom: 6px; width: 3px; background: rgba(184,134,11,.4); }
+.tl-item { position: relative; margin-bottom: 26px; }
+.tl-item::before { content: ""; position: absolute; left: -30px; top: 4px; width: 15px; height: 15px; border-radius: 50%; background: var(--or); box-shadow: 0 0 0 4px var(--papier); }
+.tl-item .yr { font-family: var(--serif); font-weight: 700; color: var(--bleu); font-size: 1.1rem; }
+
+/* ---------- Article / contenu long ---------- */
+.prose { max-width: 760px; }
+.prose p { margin: 0 0 1.1em; }
+.prose h2 { margin-top: 1.6em; }
+.note {
+  background: rgba(184,134,11,.10); border-left: 4px solid var(--or);
+  padding: 14px 18px; border-radius: 6px; font-size: .95rem; color: #6b5210;
+}
+
+/* ---------- Pied de page ---------- */
+.site-footer { background: #0f2238; color: #b9c6d6; padding: 46px 0 26px; }
+.site-footer a { color: var(--or-clair); text-decoration: none; }
+.site-footer a:hover { text-decoration: underline; }
+.footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 34px; }
+.site-footer h4 { color: #fff; margin: 0 0 12px; }
+.site-footer img { height: 60px; background: #fff; padding: 8px; border-radius: 8px; }
+.footer-bottom { border-top: 1px solid rgba(255,255,255,.12); margin-top: 34px; padding-top: 18px; font-size: .85rem; text-align: center; color: #8296ad; }
+
+/* ---------- Page bannière (sous-pages) ---------- */
+.page-banner {
+  color: #fff; text-align: center; padding: 60px 0;
+  background: linear-gradient(rgba(15,34,55,.82), rgba(15,34,55,.9)), var(--bleu);
+  border-bottom: 4px solid var(--or);
+}
+.page-banner h1 { color: #fff; margin-bottom: .2em; }
+.page-banner p { color: #dfe7f0; margin: 0 auto; max-width: 640px; }
+
+/* ---------- Utilitaires i18n ---------- */
+[data-lang-hidden] { display: none !important; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .grid-3 { grid-template-columns: 1fr 1fr; }
+  .split, .footer-grid { grid-template-columns: 1fr; }
+  .infobar .grid-3 { grid-template-columns: 1fr; gap: 18px; }
+}
+@media (max-width: 680px) {
+  .grid-3, .grid-2 { grid-template-columns: 1fr; }
+}
+/* La barre de menu passe en menu déroulant (burger) dès qu'elle manque de place,
+   ce qui évite que les intitulés longs se coupent sur deux lignes. */
+@media (max-width: 860px) {
+  .burger { display: block; }
+  .nav-links {
+    position: absolute; top: 100%; left: 0; right: 0;
+    flex-direction: column; align-items: stretch; gap: 0;
+    background: var(--papier); border-bottom: 1px solid rgba(20,49,79,.12);
+    padding: 8px 16px 16px; display: none;
+  }
+  .nav-links.open { display: flex; }
+  .nav-links a { padding: 12px 8px; border-radius: 6px; white-space: normal; }
+  .brand span { display: none; }
+}

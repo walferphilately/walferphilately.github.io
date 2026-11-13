@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact — Cercle Philatélique Walferdange</title>
+  <meta name="description" content="Contactez le Cercle Philatélique Walferdange.">
+  <link rel="icon" href="assets/img/logo.jpg">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    .form-field { margin-bottom: 16px; }
+    .form-field label { display:block; font-weight:600; margin-bottom:6px; color:var(--bleu); }
+    .form-field input, .form-field textarea {
+      width:100%; padding:12px 14px; border:1.5px solid rgba(20,49,79,.25);
+      border-radius:8px; font:inherit; background:#fff;
+    }
+    .form-field textarea { min-height:150px; resize:vertical; }
+    .contact-box { background:#fff; border-radius:var(--rayon); box-shadow:var(--ombre); padding:28px; }
+  </style>
+</head>
+<body data-page="contact">
+  <div id="site-header"></div>
+
+  <section class="page-banner">
+    <div class="container">
+      <h1 data-i18n="nav_contact"></h1>
+      <p data-i18n="contact_intro"></p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="split">
+        <!-- Contact par e-mail -->
+        <div class="contact-box">
+          <h2 data-i18n="practical_contact"></h2>
+          <p>
+            <span data-lang="fr">Pour toute question ou pour nous rejoindre, écrivez-nous directement par e-mail :</span>
+            <span data-lang="en">For any question or to join us, simply write to us by e-mail:</span>
+          </p>
+          <p style="font-size:1.15rem;margin-top:14px">
+            <!-- L'adresse est assemblée par JavaScript pour la protéger des robots. -->
+            <a id="contact-email" href="#" style="font-weight:600"></a>
+          </p>
+        </div>
+
+        <!-- Coordonnées + adhésion -->
+        <div>
+          <p>
+            <span data-lang="fr"><strong>Adresse des réunions :</strong><br>Salle N°1, Centre Prince Henri<br>Walferdange (Luxembourg)</span>
+            <span data-lang="en"><strong>Meeting address:</strong><br>Room N°1, Centre Prince Henri<br>Walferdange (Luxembourg)</span>
+          </p>
+
+          <div class="note" style="margin-top:24px">
+            <h3 style="margin-top:0" data-i18n="contact_join_title"></h3>
+            <span data-i18n="contact_join_text"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+
+  <script src="content/i18n.js"></script>
+  <script src="content/events.js"></script>
+  <script src="content/reports.js"></script>
+  <script src="assets/js/site.js"></script>
+  <script>
+    // Reconstitue l'adresse e-mail à partir des deux morceaux (anti-robots)
+    // définis dans content/i18n.js, puis l'affiche sous forme de lien cliquable.
+    document.addEventListener("DOMContentLoaded", function () {
+      var info = window.CPW_INFO || {};
+      var mail = (info.email_user && info.email_domain)
+        ? info.email_user + "@" + info.email_domain
+        : (info.email || "");
+      var a = document.getElementById("contact-email");
+      if (a && mail) { a.href = "mailto:" + mail; a.textContent = mail; }
+    });
+  </script>
+</body>
+</html>
