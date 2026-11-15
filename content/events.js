@@ -36,7 +36,7 @@ window.CPW_EVENTS = [
     title_en:  "Participation FSPL - journée des philatélistes",
     place_fr:  "Foyer de la Philatélie, Luxembourg",
     place_en:  "Foyer de la Philatélie, Luxembourg",
-    image:     "journeephila202611.png",
+    image:     "uploads/journeephila202611.png",
     body_fr:   "Plusieurs membres du Cercle ont profité de l'offre de matériel philatélique gratuit proposé par la FSPL. Moment convivial avec des échanges entre passionnés du timbre.",
     body_en:   "Several members of the Cercle took advantage of the free philatelic material offered by the FSPL. It was a friendly occasion, with nice exchanges among stamp enthusiasts."
   },
