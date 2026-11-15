@@ -28,7 +28,7 @@
 window.CPW_EVENTS = [
 
   {
-    date:      "2026-11-16",
+    date:      "2026-23-16",
     upcoming:  true,
     highlight: true,
     date_fr:   "23 novembre 2026",
