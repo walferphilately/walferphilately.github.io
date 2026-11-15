@@ -26,9 +26,23 @@
    ===================================================================== */
 
 window.CPW_EVENTS = [
-
+{
+    date:      "2026-11-15",
+    upcoming:  true,
+    highlight: true,
+    date_fr:   "15 novembre 2026",
+    date_en:   "15 novembre 2026",
+    title_fr:  "Participation FSPL - journée des philatélistes",
+    title_en:  "Participation FSPL - journée des philatélistes",
+    place_fr:  "Foyer de la Philatélie, Luxembourg",
+    place_en:  "Foyer de la Philatélie, Luxembourg",
+    image:     "journeephila202611.png",
+    body_fr:   "Plusieurs membres du Cercle ont profité de l'offre de matériel philatélique gratuit proposé par la FSPL. Moment convivial avec des échanges entre passionnés du timbre.",
+    body_en:   "Several members of the Cercle took advantage of the free philatelic material offered by the FSPL. It was a friendly occasion, with nice exchanges among stamp enthusiasts."
+  },
+   
   {
-    date:      "2026-23-16",
+    date:      "2026-11-23",
     upcoming:  true,
     highlight: true,
     date_fr:   "23 novembre 2026",
@@ -39,7 +53,7 @@ window.CPW_EVENTS = [
     place_en:  "Centre Prince Henri, Walferdange - Room 1",
     image:     "logo-fonde-1970.jpg",
     body_fr:   "Venez échanger avec les membres. Entrée libre.",
-    body_en:   "Meet and chat wuth our members. Free entry."
+    body_en:   "Meet and chat with our members. Free entry."
   },
 
   {
